@@ -47,7 +47,7 @@ public class Initialize : SceneBase {
 			//bar.Value =(int) statusStep*(int)LoadingState.InitializingResource;
 			txtCurStatus.text = "初始化配置";
 			//TODO:目前没有链接网络，暂时在这里切换场景
-			CatSceneManager.Instance.SetNextScene(SceneID.Game);
+			//CatSceneManager.Instance.SetNextScene(SceneID.Game);
 		}
 		//链接网络
 	}
