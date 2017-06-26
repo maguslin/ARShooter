@@ -85,12 +85,12 @@ public class characterBase
 		switch (type)
 		{
 		case 1:
-			return UnitClassType.SceneCat;
+			return UnitClassType.SceneBeast;
 		case 2:
-			return UnitClassType.SceneCatLitter;
+			return UnitClassType.SceneBullet;
 		
 		default:
-			return UnitClassType.ScenePet;
+			return UnitClassType.SceneObj;
 		}
 
 	}
