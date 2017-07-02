@@ -94,9 +94,9 @@ public class ResourcesManager : UnityAllSceneSingleton<ResourcesManager>
 
 	string[] dataContentNames = {
 		"Data/Config/Notice.txt",
-		"Data/DataTable/soundBase.csv",
-		"Data/DataTable/characterBase.csv",
-		"Data/DataTable/animationBase.csv",
+//		"Data/DataTable/soundBase.csv",
+//		"Data/DataTable/characterBase.csv",
+//		"Data/DataTable/animationBase.csv",
 
 	};
 
