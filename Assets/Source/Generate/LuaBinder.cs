@@ -668,7 +668,7 @@ public static class LuaBinder
 		{
 			LuaState state = LuaState.Get(L);
 			state.BeginPreModule("UnityEngine");
-			UnityEngine_MeshRendererWrap.Register(state);
+
 			int reference = state.GetMetaReference(typeof(UnityEngine.MeshRenderer));
 			state.EndPreModule(L, reference);
 			return 1;
@@ -686,7 +686,6 @@ public static class LuaBinder
 		{
 			LuaState state = LuaState.Get(L);
 			state.BeginPreModule("UnityEngine");
-			UnityEngine_BoxColliderWrap.Register(state);
 			int reference = state.GetMetaReference(typeof(UnityEngine.BoxCollider));
 			state.EndPreModule(L, reference);
 			return 1;
@@ -704,7 +703,6 @@ public static class LuaBinder
 		{
 			LuaState state = LuaState.Get(L);
 			state.BeginPreModule("UnityEngine");
-			UnityEngine_MeshColliderWrap.Register(state);
 			int reference = state.GetMetaReference(typeof(UnityEngine.MeshCollider));
 			state.EndPreModule(L, reference);
 			return 1;
@@ -722,7 +720,6 @@ public static class LuaBinder
 		{
 			LuaState state = LuaState.Get(L);
 			state.BeginPreModule("UnityEngine");
-			UnityEngine_SphereColliderWrap.Register(state);
 			int reference = state.GetMetaReference(typeof(UnityEngine.SphereCollider));
 			state.EndPreModule(L, reference);
 			return 1;
@@ -740,7 +737,6 @@ public static class LuaBinder
 		{
 			LuaState state = LuaState.Get(L);
 			state.BeginPreModule("UnityEngine");
-			UnityEngine_CharacterControllerWrap.Register(state);
 			int reference = state.GetMetaReference(typeof(UnityEngine.CharacterController));
 			state.EndPreModule(L, reference);
 			return 1;
@@ -758,7 +754,6 @@ public static class LuaBinder
 		{
 			LuaState state = LuaState.Get(L);
 			state.BeginPreModule("UnityEngine");
-			UnityEngine_CapsuleColliderWrap.Register(state);
 			int reference = state.GetMetaReference(typeof(UnityEngine.CapsuleCollider));
 			state.EndPreModule(L, reference);
 			return 1;
@@ -776,7 +771,6 @@ public static class LuaBinder
 		{
 			LuaState state = LuaState.Get(L);
 			state.BeginPreModule("UnityEngine");
-			UnityEngine_AnimationWrap.Register(state);
 			int reference = state.GetMetaReference(typeof(UnityEngine.Animation));
 			state.EndPreModule(L, reference);
 			return 1;
@@ -794,7 +788,6 @@ public static class LuaBinder
 		{
 			LuaState state = LuaState.Get(L);
 			state.BeginPreModule("UnityEngine");
-			UnityEngine_AnimationClipWrap.Register(state);
 			int reference = state.GetMetaReference(typeof(UnityEngine.AnimationClip));
 			state.EndPreModule(L, reference);
 			return 1;
@@ -812,7 +805,6 @@ public static class LuaBinder
 		{
 			LuaState state = LuaState.Get(L);
 			state.BeginPreModule("UnityEngine");
-			UnityEngine_AnimationStateWrap.Register(state);
 			int reference = state.GetMetaReference(typeof(UnityEngine.AnimationState));
 			state.EndPreModule(L, reference);
 			return 1;
@@ -830,7 +822,6 @@ public static class LuaBinder
 		{
 			LuaState state = LuaState.Get(L);
 			state.BeginPreModule("UnityEngine");
-			UnityEngine_BlendWeightsWrap.Register(state);
 			int reference = state.GetMetaReference(typeof(UnityEngine.BlendWeights));
 			state.EndPreModule(L, reference);
 			return 1;
@@ -848,7 +839,6 @@ public static class LuaBinder
 		{
 			LuaState state = LuaState.Get(L);
 			state.BeginPreModule("UnityEngine");
-			UnityEngine_RenderTextureWrap.Register(state);
 			int reference = state.GetMetaReference(typeof(UnityEngine.RenderTexture));
 			state.EndPreModule(L, reference);
 			return 1;
@@ -866,7 +856,6 @@ public static class LuaBinder
 		{
 			LuaState state = LuaState.Get(L);
 			state.BeginPreModule("UnityEngine");
-			UnityEngine_RigidbodyWrap.Register(state);
 			int reference = state.GetMetaReference(typeof(UnityEngine.Rigidbody));
 			state.EndPreModule(L, reference);
 			return 1;
