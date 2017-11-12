@@ -9,48 +9,7 @@ public static class LuaBinder
 	{
 		float t = Time.realtimeSinceStartup;
 		L.BeginModule(null);
-		LuaInterface_DebuggerWrap.Register(L);
-		TweenUtilsWrap.Register(L);
 		L.BeginModule("UnityEngine");
-		UnityEngine_ComponentWrap.Register(L);
-		UnityEngine_TransformWrap.Register(L);
-		UnityEngine_MaterialWrap.Register(L);
-		UnityEngine_LightWrap.Register(L);
-		UnityEngine_CameraWrap.Register(L);
-		UnityEngine_AudioSourceWrap.Register(L);
-		UnityEngine_BehaviourWrap.Register(L);
-		UnityEngine_MonoBehaviourWrap.Register(L);
-		UnityEngine_GameObjectWrap.Register(L);
-		UnityEngine_TrackedReferenceWrap.Register(L);
-		UnityEngine_ApplicationWrap.Register(L);
-		UnityEngine_PhysicsWrap.Register(L);
-		UnityEngine_ColliderWrap.Register(L);
-		UnityEngine_TimeWrap.Register(L);
-		UnityEngine_TextureWrap.Register(L);
-		UnityEngine_Texture2DWrap.Register(L);
-		UnityEngine_ShaderWrap.Register(L);
-		UnityEngine_RendererWrap.Register(L);
-		UnityEngine_WWWWrap.Register(L);
-		UnityEngine_ScreenWrap.Register(L);
-		UnityEngine_CameraClearFlagsWrap.Register(L);
-		UnityEngine_AudioClipWrap.Register(L);
-		UnityEngine_AssetBundleWrap.Register(L);
-		UnityEngine_ParticleSystemWrap.Register(L);
-		UnityEngine_AsyncOperationWrap.Register(L);
-		UnityEngine_LightTypeWrap.Register(L);
-		UnityEngine_SleepTimeoutWrap.Register(L);
-		UnityEngine_AnimatorWrap.Register(L);
-		UnityEngine_InputWrap.Register(L);
-		UnityEngine_KeyCodeWrap.Register(L);
-		UnityEngine_SkinnedMeshRendererWrap.Register(L);
-		UnityEngine_SpaceWrap.Register(L);
-		UnityEngine_AnimationBlendModeWrap.Register(L);
-		UnityEngine_QueueModeWrap.Register(L);
-		UnityEngine_PlayModeWrap.Register(L);
-		UnityEngine_WrapModeWrap.Register(L);
-		UnityEngine_QualitySettingsWrap.Register(L);
-		UnityEngine_RenderSettingsWrap.Register(L);
-		UnityEngine_ResourcesWrap.Register(L);
 		L.BeginModule("Events");
 		L.RegFunction("UnityAction", UnityEngine_Events_UnityAction);
 		L.EndModule();
@@ -68,50 +27,6 @@ public static class LuaBinder
 		L.EndModule();
 		L.EndModule();
 		L.BeginModule("FairyGUI");
-		FairyGUI_EventContextWrap.Register(L);
-		FairyGUI_EventDispatcherWrap.Register(L);
-		FairyGUI_EventListenerWrap.Register(L);
-		FairyGUI_InputEventWrap.Register(L);
-		FairyGUI_DisplayObjectWrap.Register(L);
-		FairyGUI_ContainerWrap.Register(L);
-		FairyGUI_StageWrap.Register(L);
-		FairyGUI_ControllerWrap.Register(L);
-		FairyGUI_GObjectWrap.Register(L);
-		FairyGUI_GGraphWrap.Register(L);
-		FairyGUI_GGroupWrap.Register(L);
-		FairyGUI_GImageWrap.Register(L);
-		FairyGUI_GLoaderWrap.Register(L);
-		FairyGUI_PlayStateWrap.Register(L);
-		FairyGUI_GMovieClipWrap.Register(L);
-		FairyGUI_TextFormatWrap.Register(L);
-		FairyGUI_GTextFieldWrap.Register(L);
-		FairyGUI_GRichTextFieldWrap.Register(L);
-		FairyGUI_GTextInputWrap.Register(L);
-		FairyGUI_GComponentWrap.Register(L);
-		FairyGUI_GListWrap.Register(L);
-		FairyGUI_GRootWrap.Register(L);
-		FairyGUI_GLabelWrap.Register(L);
-		FairyGUI_GButtonWrap.Register(L);
-		FairyGUI_GComboBoxWrap.Register(L);
-		FairyGUI_GProgressBarWrap.Register(L);
-		FairyGUI_GSliderWrap.Register(L);
-		FairyGUI_PopupMenuWrap.Register(L);
-		FairyGUI_ScrollPaneWrap.Register(L);
-		FairyGUI_TransitionWrap.Register(L);
-		FairyGUI_UIPackageWrap.Register(L);
-		FairyGUI_WindowWrap.Register(L);
-		FairyGUI_GObjectPoolWrap.Register(L);
-		FairyGUI_RelationsWrap.Register(L);
-		FairyGUI_RelationTypeWrap.Register(L);
-		FairyGUI_TimersWrap.Register(L);
-		FairyGUI_LuaUIHelperWrap.Register(L);
-		FairyGUI_GLuaComponentWrap.Register(L);
-		FairyGUI_GLuaLabelWrap.Register(L);
-		FairyGUI_GLuaButtonWrap.Register(L);
-		FairyGUI_GLuaProgressBarWrap.Register(L);
-		FairyGUI_GLuaSliderWrap.Register(L);
-		FairyGUI_GLuaComboBoxWrap.Register(L);
-		FairyGUI_LuaWindowWrap.Register(L);
 		L.RegFunction("EventCallback0", FairyGUI_EventCallback0);
 		L.RegFunction("EventCallback1", FairyGUI_EventCallback1);
 		L.RegFunction("ListItemRenderer", FairyGUI_ListItemRenderer);
@@ -753,7 +668,7 @@ public static class LuaBinder
 		{
 			LuaState state = LuaState.Get(L);
 			state.BeginPreModule("UnityEngine");
-			UnityEngine_MeshRendererWrap.Register(state);
+
 			int reference = state.GetMetaReference(typeof(UnityEngine.MeshRenderer));
 			state.EndPreModule(L, reference);
 			return 1;
@@ -771,7 +686,6 @@ public static class LuaBinder
 		{
 			LuaState state = LuaState.Get(L);
 			state.BeginPreModule("UnityEngine");
-			UnityEngine_BoxColliderWrap.Register(state);
 			int reference = state.GetMetaReference(typeof(UnityEngine.BoxCollider));
 			state.EndPreModule(L, reference);
 			return 1;
@@ -789,7 +703,6 @@ public static class LuaBinder
 		{
 			LuaState state = LuaState.Get(L);
 			state.BeginPreModule("UnityEngine");
-			UnityEngine_MeshColliderWrap.Register(state);
 			int reference = state.GetMetaReference(typeof(UnityEngine.MeshCollider));
 			state.EndPreModule(L, reference);
 			return 1;
@@ -807,7 +720,6 @@ public static class LuaBinder
 		{
 			LuaState state = LuaState.Get(L);
 			state.BeginPreModule("UnityEngine");
-			UnityEngine_SphereColliderWrap.Register(state);
 			int reference = state.GetMetaReference(typeof(UnityEngine.SphereCollider));
 			state.EndPreModule(L, reference);
 			return 1;
@@ -825,7 +737,6 @@ public static class LuaBinder
 		{
 			LuaState state = LuaState.Get(L);
 			state.BeginPreModule("UnityEngine");
-			UnityEngine_CharacterControllerWrap.Register(state);
 			int reference = state.GetMetaReference(typeof(UnityEngine.CharacterController));
 			state.EndPreModule(L, reference);
 			return 1;
@@ -843,7 +754,6 @@ public static class LuaBinder
 		{
 			LuaState state = LuaState.Get(L);
 			state.BeginPreModule("UnityEngine");
-			UnityEngine_CapsuleColliderWrap.Register(state);
 			int reference = state.GetMetaReference(typeof(UnityEngine.CapsuleCollider));
 			state.EndPreModule(L, reference);
 			return 1;
@@ -861,7 +771,6 @@ public static class LuaBinder
 		{
 			LuaState state = LuaState.Get(L);
 			state.BeginPreModule("UnityEngine");
-			UnityEngine_AnimationWrap.Register(state);
 			int reference = state.GetMetaReference(typeof(UnityEngine.Animation));
 			state.EndPreModule(L, reference);
 			return 1;
@@ -879,7 +788,6 @@ public static class LuaBinder
 		{
 			LuaState state = LuaState.Get(L);
 			state.BeginPreModule("UnityEngine");
-			UnityEngine_AnimationClipWrap.Register(state);
 			int reference = state.GetMetaReference(typeof(UnityEngine.AnimationClip));
 			state.EndPreModule(L, reference);
 			return 1;
@@ -897,7 +805,6 @@ public static class LuaBinder
 		{
 			LuaState state = LuaState.Get(L);
 			state.BeginPreModule("UnityEngine");
-			UnityEngine_AnimationStateWrap.Register(state);
 			int reference = state.GetMetaReference(typeof(UnityEngine.AnimationState));
 			state.EndPreModule(L, reference);
 			return 1;
@@ -915,7 +822,6 @@ public static class LuaBinder
 		{
 			LuaState state = LuaState.Get(L);
 			state.BeginPreModule("UnityEngine");
-			UnityEngine_BlendWeightsWrap.Register(state);
 			int reference = state.GetMetaReference(typeof(UnityEngine.BlendWeights));
 			state.EndPreModule(L, reference);
 			return 1;
@@ -933,7 +839,6 @@ public static class LuaBinder
 		{
 			LuaState state = LuaState.Get(L);
 			state.BeginPreModule("UnityEngine");
-			UnityEngine_RenderTextureWrap.Register(state);
 			int reference = state.GetMetaReference(typeof(UnityEngine.RenderTexture));
 			state.EndPreModule(L, reference);
 			return 1;
@@ -951,7 +856,6 @@ public static class LuaBinder
 		{
 			LuaState state = LuaState.Get(L);
 			state.BeginPreModule("UnityEngine");
-			UnityEngine_RigidbodyWrap.Register(state);
 			int reference = state.GetMetaReference(typeof(UnityEngine.Rigidbody));
 			state.EndPreModule(L, reference);
 			return 1;
