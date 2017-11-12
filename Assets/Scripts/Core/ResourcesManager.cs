@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-
+using FairyGUI;
 public enum LoadingState
 {
 	DownloadingConfig = 1,
@@ -236,7 +236,16 @@ public class ResourcesManager : UnityAllSceneSingleton<ResourcesManager>
 		}
 
 	}
-	
+		public IEnumerator LoadUI(string path)
+	{
+		AssetBundle assetBundle = GetAssetBoundle(path + ".assetbundle");
+		if (assetBundle != null) {
+			UIPackage.AddPackage (assetBundle);
+		} else {
+			UIPackage.AddPackage (path);
+		}
+		yield return null;
+	}
 	public T LoadAsset<T>(string assetPath) where T:Object
 	{
 		AssetBundle assetBundle = GetAssetBoundle(assetPath + ".assetbundle");
