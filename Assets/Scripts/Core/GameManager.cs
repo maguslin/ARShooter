@@ -49,7 +49,7 @@ public class GameManager : UnityAllSceneSingleton<GameManager> {
 		Time.timeScale = 0;
 		Application.targetFrameRate = 5;
 	}
-	public override void OnInit ()
+	public  void OnInit ()
 	{
 		Application.runInBackground = true;
 		Debug.logger.logEnabled = true;//打开log，发布正式版的时候关闭
@@ -67,8 +67,9 @@ public class GameManager : UnityAllSceneSingleton<GameManager> {
 		ResourcesManager.Create();
 
 
+		UIManager.Create ();
 		//UIManager.Create();
-
+		LuaManager.Create();
 		//网络
 	}
 	public override void OnTerminate ()

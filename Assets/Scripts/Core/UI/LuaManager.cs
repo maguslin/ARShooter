@@ -9,11 +9,12 @@ public class LuaManager : UnityAllSceneSingletonVisible<LuaManager>
     private LuaLooper loop = null;
 //    public AssetBundleManager manager;
     // Use this for initialization
-    public override void Awake()
+	public override  void OnInit()
     {
         Initialize();
         StartLooper();
         StartManager();
+
     }
 
     void Initialize()

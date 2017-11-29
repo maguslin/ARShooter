@@ -24,6 +24,11 @@ public struct LoadingProfiler
 
 	public int currentSize;
 }
+public struct UICfg
+{
+	public string pkg;
+	public string path;
+}
 
 public class ResourcesManager : UnityAllSceneSingleton<ResourcesManager>
 {
@@ -47,8 +52,7 @@ public class ResourcesManager : UnityAllSceneSingleton<ResourcesManager>
 	//Desktop (Mac OS or Windows)
 		BasePathURL = "file:"+ Application.dataPath + "/StreamingAssets";
 	#endif
-	
-	
+
 
 	public LoadingProfiler SystemLoadingState;
 

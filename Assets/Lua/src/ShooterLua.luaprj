@@ -1,7 +1,95 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
 <Project Name="ShooterLua.luaprj" Cmd="" Arg="" Dir="" Toggle="false" >
-    <LuaFile RelativePath=".\FairyGUI.lua" />
-    <LuaFile RelativePath=".\GameInit.lua" />
-    <LuaFile RelativePath=".\Game.lua" />
+    <Filter Name="Core" Directory=".\..\Core" Toggle="true" >
+        <LuaFile RelativePath=".\..\Core\event.lua" />
+        <LuaFile RelativePath=".\..\Core\list.lua" />
+        <LuaFile RelativePath=".\..\Core\ltn12.lua" />
+        <LuaFile RelativePath=".\..\Core\mime.lua" />
+        <LuaFile RelativePath=".\..\Core\slot.lua" />
+        <LuaFile RelativePath=".\..\Core\socket.lua" />
+        <LuaFile RelativePath=".\..\Core\tolua.lua" />
+        <LuaFile RelativePath=".\..\Core\typeof.lua" />
+        <Filter Name="cjson" Directory=".\..\Core\cjson" Toggle="true" >
+            <LuaFile RelativePath=".\..\Core\cjson\util.lua" />
+        </Filter>
+        <Filter Name="jit" Directory=".\..\Core\jit" Toggle="true" >
+            <LuaFile RelativePath=".\..\Core\jit\bc.lua" />
+            <LuaFile RelativePath=".\..\Core\jit\bcsave.lua" />
+            <LuaFile RelativePath=".\..\Core\jit\dis_arm.lua" />
+            <LuaFile RelativePath=".\..\Core\jit\dis_arm64.lua" />
+            <LuaFile RelativePath=".\..\Core\jit\dis_arm64be.lua" />
+            <LuaFile RelativePath=".\..\Core\jit\dis_mips.lua" />
+            <LuaFile RelativePath=".\..\Core\jit\dis_mips64.lua" />
+            <LuaFile RelativePath=".\..\Core\jit\dis_mips64el.lua" />
+            <LuaFile RelativePath=".\..\Core\jit\dis_mipsel.lua" />
+            <LuaFile RelativePath=".\..\Core\jit\dis_ppc.lua" />
+            <LuaFile RelativePath=".\..\Core\jit\dis_x64.lua" />
+            <LuaFile RelativePath=".\..\Core\jit\dis_x86.lua" />
+            <LuaFile RelativePath=".\..\Core\jit\dump.lua" />
+            <LuaFile RelativePath=".\..\Core\jit\p.lua" />
+            <LuaFile RelativePath=".\..\Core\jit\v.lua" />
+            <LuaFile RelativePath=".\..\Core\jit\vmdef.lua" />
+            <LuaFile RelativePath=".\..\Core\jit\zone.lua" />
+        </Filter>
+        <Filter Name="lpeg" Directory=".\..\Core\lpeg" Toggle="true" >
+            <LuaFile RelativePath=".\..\Core\lpeg\re.lua" />
+        </Filter>
+        <Filter Name="misc" Directory=".\..\Core\misc" Toggle="true" >
+            <LuaFile RelativePath=".\..\Core\misc\functions.lua" />
+            <LuaFile RelativePath=".\..\Core\misc\strict.lua" />
+            <LuaFile RelativePath=".\..\Core\misc\utf8.lua" />
+        </Filter>
+        <Filter Name="protobuf" Directory=".\..\Core\protobuf" Toggle="true" >
+            <LuaFile RelativePath=".\..\Core\protobuf\containers.lua" />
+            <LuaFile RelativePath=".\..\Core\protobuf\decoder.lua" />
+            <LuaFile RelativePath=".\..\Core\protobuf\descriptor.lua" />
+            <LuaFile RelativePath=".\..\Core\protobuf\encoder.lua" />
+            <LuaFile RelativePath=".\..\Core\protobuf\listener.lua" />
+            <LuaFile RelativePath=".\..\Core\protobuf\protobuf.lua" />
+            <LuaFile RelativePath=".\..\Core\protobuf\text_format.lua" />
+            <LuaFile RelativePath=".\..\Core\protobuf\type_checkers.lua" />
+            <LuaFile RelativePath=".\..\Core\protobuf\wire_format.lua" />
+        </Filter>
+        <Filter Name="socket" Directory=".\..\Core\socket" Toggle="true" >
+            <LuaFile RelativePath=".\..\Core\socket\ftp.lua" />
+            <LuaFile RelativePath=".\..\Core\socket\headers.lua" />
+            <LuaFile RelativePath=".\..\Core\socket\http.lua" />
+            <LuaFile RelativePath=".\..\Core\socket\mbox.lua" />
+            <LuaFile RelativePath=".\..\Core\socket\smtp.lua" />
+            <LuaFile RelativePath=".\..\Core\socket\tp.lua" />
+            <LuaFile RelativePath=".\..\Core\socket\url.lua" />
+        </Filter>
+        <Filter Name="System" Directory=".\..\Core\System" Toggle="false" >
+            <LuaFile RelativePath=".\..\Core\System\coroutine.lua" />
+            <LuaFile RelativePath=".\..\Core\System\Timer.lua" />
+            <LuaFile RelativePath=".\..\Core\System\ValueType.lua" />
+            <Filter Name="Reflection" Directory=".\..\Core\System\Reflection" Toggle="true" >
+                <LuaFile RelativePath=".\..\Core\System\Reflection\BindingFlags.lua" />
+            </Filter>
+        </Filter>
+        <Filter Name="UnityEngine" Directory=".\..\Core\UnityEngine" Toggle="true" >
+            <LuaFile RelativePath=".\..\Core\UnityEngine\Bounds.lua" />
+            <LuaFile RelativePath=".\..\Core\UnityEngine\Color.lua" />
+            <LuaFile RelativePath=".\..\Core\UnityEngine\LayerMask.lua" />
+            <LuaFile RelativePath=".\..\Core\UnityEngine\Mathf.lua" />
+            <LuaFile RelativePath=".\..\Core\UnityEngine\Plane.lua" />
+            <LuaFile RelativePath=".\..\Core\UnityEngine\Quaternion.lua" />
+            <LuaFile RelativePath=".\..\Core\UnityEngine\Ray.lua" />
+            <LuaFile RelativePath=".\..\Core\UnityEngine\RaycastHit.lua" />
+            <LuaFile RelativePath=".\..\Core\UnityEngine\Time.lua" />
+            <LuaFile RelativePath=".\..\Core\UnityEngine\Touch.lua" />
+            <LuaFile RelativePath=".\..\Core\UnityEngine\Vector2.lua" />
+            <LuaFile RelativePath=".\..\Core\UnityEngine\Vector3.lua" />
+            <LuaFile RelativePath=".\..\Core\UnityEngine\Vector4.lua" />
+        </Filter>
+    </Filter>
+    <Filter Name="src" Toggle="false" >
+        <LuaFile RelativePath=".\FairyGUI.lua" />
+        <LuaFile RelativePath=".\Game.lua" />
+        <LuaFile RelativePath=".\GameInit.lua" />
+        <Filter Name="Core" Directory=".\Core" Toggle="true" >
+            <LuaFile RelativePath=".\Core\Class.lua" />
+        </Filter>
+    </Filter>
 </Project>

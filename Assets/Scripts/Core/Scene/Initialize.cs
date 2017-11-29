@@ -12,12 +12,15 @@ public class Initialize : SceneBase {
 
 	void Start()
 	{
+		GameManager.Create ();
 		//CatSceneManager.Create ();
+
 		//开始下载
 		StartCoroutine(SystemInitialize());
 		statusCnt =	Enum.GetNames(Type.GetType("LoadingState")).Length;
 		statusStep = 100.0f /statusCnt ;
-		LuaManager.Instance.CallLuaFunByName("Game.initLoadUI");
+
+
 	}
 	IEnumerator SystemInitialize()
 	{
@@ -28,8 +31,6 @@ public class Initialize : SceneBase {
 		//    yield return StartCoroutine(SolarNetworkManager.Instance.InitAndConnectToServer());
 		//}
 		yield return StartCoroutine(ResourcesManager.Instance.LoadSystemBaseDataAysn());
-		//加载UI
-		yield return StartCoroutine(ResourcesManager.Instance.LoadUI("ARShooter"));
 
 	}
 	void Update()
