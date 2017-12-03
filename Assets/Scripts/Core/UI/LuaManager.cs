@@ -7,6 +7,7 @@ public class LuaManager : UnityAllSceneSingletonVisible<LuaManager>
 {
     public LuaState luaState;
     private LuaLooper loop = null;
+	private LuaResLoader loader = null;
 //    public AssetBundleManager manager;
     // Use this for initialization
 	public override  void OnInit()
@@ -21,7 +22,7 @@ public class LuaManager : UnityAllSceneSingletonVisible<LuaManager>
     {
 
         luaState = new LuaState();
-        new LuaResLoader();
+		loader = new LuaResLoader();
 #if UNITY_EDITOR
         luaState.AddSearchPath(LuaConst.luaDir);
 #endif
@@ -96,6 +97,7 @@ public class LuaManager : UnityAllSceneSingletonVisible<LuaManager>
 //            Debug.Log("AssetBundleManager 初始化完成 ！");
 //        });
     }
+	[LuaInterface.NoToLua]
     public object[] CallLuaFunByName(string strLuaPath, string funcName, params object[] args)
     {
         if (!_GameLuaIsLoaded)
@@ -111,6 +113,7 @@ public class LuaManager : UnityAllSceneSingletonVisible<LuaManager>
         return func.Call(args);
     }
     private bool _GameLuaIsLoaded;
+	[LuaInterface.NoToLua]
     public object[] CallLuaFunByName(string funcName, params object[] args)
     {
         if (!_GameLuaIsLoaded)
@@ -121,15 +124,31 @@ public class LuaManager : UnityAllSceneSingletonVisible<LuaManager>
         LuaFunction func = luaState.GetFunction(funcName);
         return func.Call(args);
     }
-
+	[LuaInterface.NoToLua]
     public override void OnDestroy()
     {
-        if(luaState != null)
-        {
-            luaState.Dispose();
-        }
+		_GameLuaIsLoaded = false;
+		if (luaState != null)
+		{
+			luaState.Dispose();
+		}
+		if (loop != null)
+		{
+			Destroy(loop);
+			loop = null;
+		}
+		if(loader != null)
+		{
+			loader.Dispose ();
+			loader = null;
+		}
     }
-
+	[LuaInterface.NoToLua]
+	public void LuaGC()
+	{
+		luaState.LuaGC (LuaGCOptions.LUA_GCCOLLECT);
+	}
+	[LuaInterface.NoToLua]
     public void Reset()
     {
         _GameLuaIsLoaded = false;
@@ -137,11 +156,16 @@ public class LuaManager : UnityAllSceneSingletonVisible<LuaManager>
         {
             luaState.Dispose();
         }
-        if (loop)
+		if (loop != null)
         {
             Destroy(loop);
             loop = null;
         }
+		if(loader != null)
+		{
+			loader.Dispose ();
+			loader = null;
+		}
 //        if(manager)
 //        {
 //            Destroy(manager);

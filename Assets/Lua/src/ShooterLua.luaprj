@@ -88,8 +88,9 @@
         <LuaFile RelativePath=".\FairyGUI.lua" />
         <LuaFile RelativePath=".\Game.lua" />
         <LuaFile RelativePath=".\GameInit.lua" />
-        <Filter Name="Core" Directory=".\Core" Toggle="true" >
+        <Filter Name="Core" Directory=".\Core" Toggle="false" >
             <LuaFile RelativePath=".\Core\Class.lua" />
+            <LuaFile RelativePath=".\Core\Function.lua" />
         </Filter>
     </Filter>
 </Project>
