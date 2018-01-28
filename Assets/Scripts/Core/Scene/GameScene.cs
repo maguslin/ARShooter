@@ -21,9 +21,9 @@ public class GameScene : SceneBase
 		Time.timeScale = 1;
 		Application.targetFrameRate = 45;
 		#if UNITY_EDITOR
-		if(!ARSceneManager.Created)
+		if(!MagusSceneManager.Created)
 		{
-			ARSceneManager.Create ();
+            MagusSceneManager.Create ();
 			GameManager.Create ();
 		}
 		#endif
@@ -51,19 +51,15 @@ public class GameScene : SceneBase
 		{
 			//reset game!!
 		}
-//		GamePlayer.Me.Create ();
-//		GamePlayer.Me.instance.SetPlayer (playerBody.transform);
-		//加载基础场景
-		//生成ARKIT管理器	
-	
+        //		GamePlayer.Me.Create ();
+        //		GamePlayer.Me.instance.SetPlayer (playerBody.transform);
+        //加载基础场景
 
-		//生成ARKIT镜头
-	
 
-		//OnSceneLoaded();
-	//UIManager.Instance.Open (UIID.CatHandbook);
-		//更新下载状态
-		ARSceneManager.Instance.UpdateLoadingState(100, 100);
+        //OnSceneLoaded();
+        //UIManager.Instance.Open (UIID.CatHandbook);
+        //更新下载状态
+        MagusSceneManager.Instance.UpdateLoadingState(100, 100);
 	}
 		
 	public void OnSceneLoaded()

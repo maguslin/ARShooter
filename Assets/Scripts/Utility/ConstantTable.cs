@@ -8,7 +8,7 @@ public partial class ConstantTable {
 	public static readonly string FILEPATH = Application.persistentDataPath+"\\ARShooter\\";
 	public static readonly string DataAssetBoundleFile = "Data.assetbundle";
 	public static readonly string ResourcesPath =  Application.dataPath+"/Resources/";
-	public static readonly string UserDataPath = ResourcesManager.WriteablePath + "/playerInfo.txt";
+	public static readonly string UserDataPath = ResourcesManager.Instance.WriteablePath + "/playerInfo.txt";
 	// Use this for initialization
 
 }

@@ -1024,6 +1024,7 @@ public static class ToLuaMenu
 
     static void CopyBuildBat(string path, string tempDir)
     {
+
         if (EditorUserBuildSettings.activeBuildTarget == BuildTarget.StandaloneWindows)
         {
             if (IntPtr.Size == 4)
@@ -1042,7 +1043,12 @@ public static class ToLuaMenu
         }
         else
         {
+#if UNITY_EDITOR
+            File.Copy(path + "/Luajit64/Build.bat", tempDir + "/Build.bat", true);
+
+#else
             File.Copy(path + "/Luajit/Build.bat", tempDir + "/Build.bat", true);
+#endif
         }
 
     }

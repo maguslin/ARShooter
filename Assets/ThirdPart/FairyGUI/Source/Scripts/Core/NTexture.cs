@@ -65,7 +65,9 @@ namespace FairyGUI
 			Texture2D emptyTexture = new Texture2D(1, 1, TextureFormat.RGB24, false);
 			emptyTexture.hideFlags = DisplayOptions.hideFlags;
 			emptyTexture.SetPixel(0, 0, Color.white);
-			emptyTexture.Apply();
+           
+
+            emptyTexture.Apply();
 			return emptyTexture;
 		}
 

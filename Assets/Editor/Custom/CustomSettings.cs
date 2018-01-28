@@ -193,6 +193,15 @@ public static class CustomSettings
 		_GT(typeof(LuaWindow)),
 
 		_GT(typeof(TweenUtils)),
+
+        _GT(typeof(GameManager)),
+        _GT(typeof(MagusSceneManager)),
+        _GT(typeof(MapSceneManager)),
+        _GT(typeof(ConstantTable)),
+        _GT(typeof(SceneID)),
+        _GT(typeof(MsgType)),
+        _GT(typeof(LayerMask)),
+        _GT(typeof(MagusEventListener)),
     };
 
     public static List<Type> dynamicList = new List<Type>()

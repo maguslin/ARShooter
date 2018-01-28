@@ -249,6 +249,7 @@ public class BaseDataManager : UnityAllSceneSingleton<BaseDataManager>
 				continue;
 			}
 
+           
 			//第一次字段作为索引
 			int index = int.Parse(cr[0]);
 	

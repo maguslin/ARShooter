@@ -25,7 +25,7 @@ public class GameManager : UnityAllSceneSingleton<GameManager> {
 	{
 		return _GameState;
 	}
-	private string macAddress = SystemInfo.deviceUniqueIdentifier;
+    private string macAddress;//= SystemInfo.deviceUniqueIdentifier;
 	public string GetMacAddress()
 	{
 		return macAddress;
@@ -49,14 +49,14 @@ public class GameManager : UnityAllSceneSingleton<GameManager> {
 		Time.timeScale = 0;
 		Application.targetFrameRate = 5;
 	}
-	public  void OnInit ()
+	public override void OnInit ()
 	{
 		Application.runInBackground = true;
-		Debug.logger.logEnabled = true;//打开log，发布正式版的时候关闭
+		Debug.unityLogger.logEnabled = true;//打开log，发布正式版的时候关闭
+        macAddress  = SystemInfo.deviceUniqueIdentifier;
 
-
-		//基本数据访问接口
-		BaseDataManager.Create();
+        //基本数据访问接口
+        BaseDataManager.Create();
 
 		//TouchListener.Create();
 
@@ -177,9 +177,9 @@ public class GameManager : UnityAllSceneSingleton<GameManager> {
 		_GameLowFramed = _GameLowFramed || Application.runInBackground;
 		if (_OldGameLowFramed != _GameLowFramed) {
 			if (_GameLowFramed)
-				EventListener.Broadcast (MsgType.ApplicationPaused);
+                MagusEventListener.Broadcast (MsgType.ApplicationPaused);
 			else
-				EventListener.Broadcast (MsgType.ApplicationActived);
+                MagusEventListener.Broadcast (MsgType.ApplicationActived);
 			_OldGameLowFramed = _GameLowFramed;
 		}
 

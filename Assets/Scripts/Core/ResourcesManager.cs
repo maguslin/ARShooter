@@ -33,12 +33,23 @@ public struct UICfg
 public class ResourcesManager : UnityAllSceneSingleton<ResourcesManager>
 {
 
-	public static readonly string WriteablePath = Application.persistentDataPath + "/";
-	//不同平台下的streamingasset路径
-	public static readonly string BasePathURL =
-	#if UNITY_EDITOR
-		 "file:" + Application.dataPath + "/StreamingAssets";
-	#elif UNITY_ANDROID
+	public   string WriteablePath ;
+    //不同平台下的streamingasset路径
+    public string BasePathURL;
+
+
+	public LoadingProfiler SystemLoadingState;
+
+	bool _DataLoaded = false;
+
+    public override void OnInit()
+    {
+        base.OnInit();
+        WriteablePath = Application.persistentDataPath + "/";
+        BasePathURL =
+#if UNITY_EDITOR
+         "file:" + Application.dataPath + "/StreamingAssets";
+#elif UNITY_ANDROID
 		BasePathURL = "jar:file://"+ Application.dataPath + "!/assets/";
 	
 
@@ -51,15 +62,10 @@ public class ResourcesManager : UnityAllSceneSingleton<ResourcesManager>
 #else
 	//Desktop (Mac OS or Windows)
 		BasePathURL = "file:"+ Application.dataPath + "/StreamingAssets";
-	#endif
-
-
-	public LoadingProfiler SystemLoadingState;
-
-	bool _DataLoaded = false;
-
-	// Use this for initialization
-	public override void Start ()
+#endif
+    }
+    // Use this for initialization
+    public override void Start ()
 	{
 		Debug.Log ("WriteablePath/" + WriteablePath);
 	}
@@ -91,15 +97,15 @@ public class ResourcesManager : UnityAllSceneSingleton<ResourcesManager>
 			} else if (tablename.IndexOf (".byte") != -1 || tablename.IndexOf (".data") != -1) {
 				BaseDataManager.Instance.ReadBinaryDataContent (textAssetname, textAsset.bytes);
 			} else {
-				Debug.LogError ("un supported file format" + tablename);
+				Debug.LogError ("unsupported file format" + tablename);
 			}
 		}
 	}
 
 	string[] dataContentNames = {
-		"Data/Config/Notice.txt",
+		"Config/Config_CH/Notice.txt",
 //		"Data/DataTable/soundBase.csv",
-//		"Data/DataTable/characterBase.csv",
+		"Data/DataTable/characterBase.csv",
 //		"Data/DataTable/animationBase.csv",
 
 	};
@@ -123,7 +129,7 @@ public class ResourcesManager : UnityAllSceneSingleton<ResourcesManager>
                 yield return null;
 			}
 			LoadDataObjects (objects.ToArray (), dataContentNames);
-		} else {
+		} else { 
 			//TODO: 使用新的load方式
 		}
 

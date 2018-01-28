@@ -19,7 +19,7 @@ public class LoginWin
 	private GComponent m_chooseServerCom;
 	private GTextField m_appNumText;
 	private GTextField m_resNumText;
-	private static LoginWin _Instance;
+    private static LoginWin _Instance;
 //	private int addressId;
 //	private float m_delayConnectSecond;
 
@@ -44,22 +44,23 @@ public class LoginWin
 		{
 			m_loginWindow = new Window ();
 			UIPackage.AddPackage ("UI/ARShooter");
-			m_loginWindow.contentPane = UIPackage.CreateObject ("ARShooter", "ARShooter").asCom;
-			if (m_loginWindow.contentPane != null) {
-				m_loginWindow.contentPane.height = GRoot.inst.height;
-				m_loginWindow.contentPane.width = GRoot.inst.width;
-				m_loginWindow.Center ();
+			m_loginWindow.contentPane = UIPackage.CreateObject ("ARShooter", "Main").asCom;
+           if (m_loginWindow.contentPane != null)
+            {
+                m_loginWindow.contentPane.height = GRoot.inst.height;
+                m_loginWindow.contentPane.width = GRoot.inst.width;
+   //             m_loginWindow.Center();
 
-				//userid
-				//button
-				//controller
-				m_progressBar  = m_loginWindow.contentPane.GetChild("ProgressBar").asProgress;
-				//servertext
-				//choosenserverbtn 
-				//appnumtext
-				//resnumtext
-				}
-			}
+   //             //userid
+   //             //button
+   //             //controller
+               m_progressBar = m_loginWindow.contentPane.GetChild("n9").asProgress;
+   //             //servertext
+   //             //choosenserverbtn 
+   //             //appnumtext
+   //             //resnumtext
+            }
+        }
 		m_loginWindow.Show ();
 		m_loginWindow.sortingOrder = int.MaxValue;
 	}
